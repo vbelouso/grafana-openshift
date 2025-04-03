@@ -1,0 +1,25 @@
+---
+apiVersion: grafana.integreatly.org/v1beta1
+kind: Grafana
+metadata:
+  labels:
+    dashboards: "grafana"
+  name: grafana
+spec:
+  route:
+    spec: {}
+  client:
+    preferIngress: false
+  config:
+    auth:
+      disable_login_form: 'False'
+      disable_signout_menu: 'False'
+    auth.anonymous:
+      enabled: 'False'
+    auth.basic:
+      enabled: 'True'
+    log:
+      mode: console
+    security:
+      admin_password: start
+      admin_user: root
