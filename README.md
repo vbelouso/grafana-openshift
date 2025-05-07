@@ -62,6 +62,11 @@ oc create secret generic grafana-sa-token \
 
 ---
 
+> [!IMPORTANT]
+> Make sure the `scrape_interval` is properly configured in the `basic/grafana-datasource.yaml` file to match your Prometheus scrape frequency.
+For example, if Prometheus is scraping every 5s, you should set `scrapeInterval: 5s` and ensure the `__rate_interval` used in Grafana panels is at least 20s.
+This ensures correct `rate()` calculations and avoids visual anomalies in your dashboards.
+
 ## 7. Create the Prometheus Data Source
 
 ```bash

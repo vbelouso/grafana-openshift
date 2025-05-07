@@ -16,7 +16,9 @@ spec:
     isDefault: true
     jsonData:
       httpHeaderName1: Authorization
-      timeInterval: 5s
+      # Adjust it based on ServiceMonitor configuration
+      # Defeault OpenShift scrape_interval: 30s
+      timeInterval: 30s
       tlsSkipVerify: true
     name: prometheus
     secureJsonData:
